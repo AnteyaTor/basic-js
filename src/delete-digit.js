@@ -11,9 +11,14 @@ const { NotImplementedError } = require('../extensions/index.js');
  * For n = 152, the output should be 52
  *
  */
-function deleteDigit(/* n */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function deleteDigit( n ) {
+  let arr=[]
+  for (let j=0, i=1;j<String(n).length;i*=10, j++) {
+    
+    arr.push(Math.floor(n/(i*10))*i+n%i)
+  } return +arr.sort((a,b)=>b-a).splice(0,1).join()
+
+  
 }
 
 module.exports = {
